@@ -12,6 +12,8 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -37,13 +39,20 @@ android {
 }
 
 dependencies {
-    // Dépendances minimales
+    // Dépendances Android de base
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("com.google.android.material:material:1.11.0")
 
-    // Google AR Core seulement (pas Sceneform)
+    // Google AR Core
     implementation("com.google.ar:core:1.40.0")
 
     // MediaPipe pour le suivi de la main
     implementation("com.google.mediapipe:tasks-vision:0.10.10")
+
+    // Tests
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
